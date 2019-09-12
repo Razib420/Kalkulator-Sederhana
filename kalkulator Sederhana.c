@@ -5,7 +5,9 @@ int main()
 {
 	char menu, status;
 	int a, b, c;
+	
 	awal:
+		
 	system("cls");
 	printf("============================\n");
 	printf("   Kalkulator Sederhana\n");
@@ -15,7 +17,7 @@ int main()
 	printf(" \t[2] Pengurangan\n");
 	printf(" \t[3] Keluar\n\n");
 	printf(" Pilih Menu : ");
-	scanf("%c", &menu);
+	menu = getche();
 	
 	if(menu == '1')
 	{
@@ -31,13 +33,18 @@ int main()
 		
 		printf("                        \n\n");
 		printf(" Apakah anda ingin ke menu [Y/N] : ");
-		status = getchar();
+		status = getche();
 		
-		if(toupper(status) == 'y')
-		{
-			goto awal;			
+		if(status == 'y' || status == 'Y')
+		{	
+			goto awal;
+			
+			getch();	
 		}
-
+		else if (status != 'y')
+		{
+			exit(0);
+		}
 		
 	}
 
@@ -52,6 +59,20 @@ int main()
 		c = a - b;
 		printf(" ----------------------------\n");
 		printf(" Hasil                    : %d", c);
+		printf("                        \n\n");
+		printf(" Apakah anda ingin ke menu [Y/N] : ");
+		status = getche();
+		
+		if(status == 'y' || status == 'Y')
+		{	
+			goto awal;
+			
+			getch();	
+		}
+		else if (status != 'y')
+		{
+			exit(0);
+		}
 	}
 		
 	else if(menu == '3')
